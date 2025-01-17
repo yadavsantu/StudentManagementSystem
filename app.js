@@ -23,11 +23,14 @@ app.use('/uploads', express.static('uploads'));
 // Calling the routers
 const indexRouter = require('./routes/index');
 const studentRouter = require('./routes/student');
+const authRouter = require('./routes/auth')
+
 
 app.use(indexRouter);
 app.use(studentRouter);
+app.use(authRouter);
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}/home`);
+  console.log(`My Web App listening on port http://localhost:${port}/home`);
 });
